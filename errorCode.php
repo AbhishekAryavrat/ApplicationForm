@@ -1,4 +1,4 @@
-next_step1 {
+<!-- next_step1 {
 	101=Name box Empty;
 	102=Name Format was Incorrect;
 	103=Father Name box Empty ;
@@ -41,71 +41,103 @@ function showPreview(Siganture_Image){
 }
 
 
-		<p>Father Name:<input type="text" name="fatherName" id="father_name"></p>
-				<p>Mother Name:<input type="text" name="motherName" id="mother_name"></p>
+// 
+
+// var name = "",count=1;
+
+// function nameValidate(info)
+// {
+// 	if(info == 'userName'){nameValidation(info,"unameValidate","Name");}
+// 	if(info == 'fatherName'){nameValidation(info,"fNameValidate","Father Name");}
+// 	if(info == 'motherName'){nameValidation(info,"mNameValidate","Mother Name");}
+// }
+
+// function nameValidation(info,errDis,errName)
+// {
+// 	try{
+			
+// 			let name = document.getElementsByName(info)[0].value;
+
+// 			if(name == 0) 
+// 				{throw "Field name can not be empty";} 
+// 			else{errDis.innerHTML = "";trydemo(errDis);}
+
+// 				let val = name.trim();
+// 				let len = val.length;
+
+// 				if(len < 2) {throw "Value is too low";}else{document.getElementById(errDis).innerHTML = "";trydemo(errDis);}
+// 				if(len > 15) {throw "Value is too High";}else{document.getElementById(errDis).innerHTML = "";trydemo(errDis);}
+
+// 				let alpha = /^[a-zA-Z\s]+$/;
+// 				if(!name.match(alpha)) {throw "Value should be only Alphabets";}
+// 				else{document.getElementById(errDis).innerHTML = "";trydemo(errDis);}
+
 				
-				<!--Gender Radio Buttons-->
-				<label>Gender:
-				<input type="radio" name="gender" value="Male">Male
-				<input type="radio" name="gender" value="Female">Female<br>	
-				</label>
-				<label>Address:</label>
-				<textarea name="address" rows="5" cols="15"></textarea>
-				<p>Pincode<input type="text" name="pincode" id="pincode"></p>
-				<p>Email Id<input type="text" name="email" id="email"></p>
-
-				<p><input type="button" id="next_btn1" onclick="next_step1()" value="Next"></p>
-		</div>
-	
-		<div class="second" id="2">
 			
-			<!-- create Educational Details box-->
-			<h2>Educational Details</h2>
-				<p>Senior(10th%)<input type="text" name="senior_percentage" placeholder="Percentage" id="senior_percentage" ></p>
-				<p>Board:<input type="text" name="seniorBoard"  onkeyup="board(this)" value="" id="seniorBoard"></p>
-				<p>Senior Seconadry(12th%):<input type="text" name="secondary_percentage" placeholder="Percentage" id="secondary_percentage"></p>
-				<p>Board:<input type="text" name="secondaryBoard" onkeyup="board(this)" value="" id="secondaryBoard"></p>
-			
-					<label>Graduation Course:</label>
-					<!--create drop down list-->
-					<select name="graduation_course">
-						<option value="BCA">BCA</option>
-						<option value="BBA">BBA</option>
-						<option value="BBA">B.COM</option>
-						<option value="BBA">B.A</option>
-						<option value="BBA">B.TECH</option>			
-					</select>
-						<p>Percentage:<input type="text" name="university_percentage" id="university_percentage" placeholder="Percentage">
-						<p>University/Board:<input type="text" name="university"  onkeyup="board(this)" value="" id="university"><br>
-						<input type="button" name="Previous1" onclick="pre_step1()" id="pre_btn1" value="Previous step">
-						<input type="button" name="Next" onclick="next_step2()" id="next_btn2" value="Next step">		
-		</div>
+// 		}
+// 	catch(err)
+// 	{
+// 		document.getElementById(errDis).innerHTML = errName + " " + err;
+// 		trydemo(errDis);
+// 	}
+// }
+
+
+// function Validate(info)
+// {	
+// 	let regEx1 = /^\d{6}$/;
+// 	let regEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+// 	if(info === 'email'){emaPinValid(info,"emailValidation","Email ID",regEx);}
+// 	if(info === 'pincode'){emaPinValid(info,"pincodeValidation","Pincode",regEx1);}
+// }
+
+// function emaPinValid (info,errDis,errName,expr)
+// {
+// 	let name = document.getElementsByName(info)[0].value;
+// 	try
+// 	{if(!name.match(expr)){throw "Incorrect Format of ";}
+// 	else{document.getElementById(errDis).innerHTML = "";trydemo(errDis);}}
 	
-		<div class="third" id="3">
-		
-			<!-- create photo signature box-->	
-			<h2>Photo & Signature</h2>
-			<div id="body-overlay">
-			<!--img src="img/loading.gif" width="64px" height="64px"--></div>
-					<div id="targetOuter">
-						<div id="targetLayer"></div>
-							<img src="img/photo.png" class="icon-choose-image">
-							<!--img src="img/photo.png" class="icon-choose-image"-->
-							<div class="icon-choose-image">
-								<input type="file" name="userImage" id="userImage" class="inputFile" onchange="showPreview(this);" required>
-							</div>
-					</div>
+// 	catch(err)
+// 	{
+// 		document.getElementById(errDis).innerHTML = err + errName;
+// 		trydemo(errDis);
+// 	}
+// }
 
-					<div id="targetOuter1">
-						<div id="targetLayer1"></div>
-							<img src="img/signature.png" class="sign-choose-image">
-								<div class="sign-choose-image">
-									<input type="file" name="signImage" id="signImage" class="inputFile1" onchange="showPreviewSign(this);" required>
-								</div>
-					</div>
+// function trydemo(errDis)
+// {
+// 	// var value1 = document.getElementById(errDis).textContent;
+// 	if(document.getElementById(errDis).textContent == ""){count = 0;}
+// 	else{count++;}
+// }
 
 
-					<div>
-						<input type="button" name="Previous2" onclick="pre_step2()" value="Previous Step" id="pre_btn2">
-						<a href="formpreview.php"><input type="Submit" name="preview"  value="Submit" id="preview"  ></a>
-					</div>
+// function genderValidate()
+// {
+// 	var radio_check = document.getElementsByName("gender");
+// 	let errDis = "genderValidation";
+// 	var genCount =1;
+// 	try{if(radio_check[0].checked == false && radio_check[1].checked == false ){genCount++; throw "Fill the Gender Buttons";}
+// 		else{document.getElementById(errDis).innerHTML = "";genCount = 0;}
+// 		}
+// 	catch(err)
+// 	{
+// 		document.getElementById(errDis).innerHTML = err ;
+// 	}
+
+// 	return genCount;
+// }
+
+// function nextStep()
+// {
+
+// 	var genCount = genderValidate();
+
+// 	if(count == 0 && genCount == 0)
+// 	{
+// 		document.getElementById('1').style.display = "block";
+// 		document.getElementById('2').style.display = "block";
+// 		document.getElementById('3').style.display = "none";
+// 	}
+// } -->

@@ -81,7 +81,7 @@ function next_step1()//create a function for go on the second block and check cu
 					}
 				else if(!name_length.match(alpha))// Match format according to the Pattern.
 					{
-						throw ("")
+						throw 
 						alert(name_length + " "  +  "format is Incorrect(104)");
 		                return false;
 					}

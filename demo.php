@@ -12,6 +12,7 @@
 			<!--Link All File-->
 			<link rel="stylesheet" type="text/css" href="css/style.css">
 			<script type="text/javascript" src="javascript/demo.js"></script>
+			<script type="text/javascript" src="javascript/secondBlock.js"></script>
 			<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 	
 	</head>
@@ -25,15 +26,15 @@
 				<h2>Personal details</h2>
 				<div>
 					<label for ="userName">Name:</label>
-					<input type="text" name="userName" id="user_Name"  onchange="nameValidate(name);">
+					<input type="text" name="userName" class="validValue" id="user_Name"  onchange="nameValidate(id);">
 					<p name = "valid" id="unameValidate"></p>
 					
 					<label for ="fatherName">Father Name:</label>
-					<input type="text" name="fatherName" id="father_Name" onchange="nameValidate(name);">
+					<input type="text" name="fatherName" class="validValue" id="father_Name" onchange="nameValidate(id);">
 					<p name = "valid" id= "fNameValidate"></p>
 
 					<label for ="motherName">Mother Name:</label>
-					<input type="text" name="motherName" id="mother_Name" onchange="nameValidate(name);">
+					<input type="text" name="motherName" class="validValue" id="mother_Name" onchange="nameValidate(id);">
 					<p name = "valid" id= "mNameValidate"></p>
 
 					<label for="gender">Gender:
@@ -48,14 +49,14 @@
 					<br><br>
 
 					<label for="pincode">Pincode</label>
-					<input type="text" name="pincode" id="_pincode" onchange="Validate(name);">
+					<input type="text" name="pincode" class="validValue" id="_pincode" onchange="Validate(id);">
 					<p name = "valid" id="pincodeValidation"></p>
 
 					<label for="email">Email ID</label>
-					<input type="text" name="email" id="_email" onchange="Validate(name);">
-					<p name = "valid" id="emailValidation">
+					<input type="text" name="email" class="validValue" id="_email" onchange="Validate(id);">
+					<p name = "valid" id="emailValidation"></p>
 				</div>
-				<input type="button" id="next_btn1" onclick="nextStep();" value="Next">
+				<input type="button" id="next_btn1" onclick="nextStep1();" value="Next">
 
 
 		</div>
@@ -63,26 +64,76 @@
 			
 			<!-- create Educational Details box-->
 			<h2>Educational Details</h2>
-				<p>Senior(10th%)<input type="text" name="senior_percentage" placeholder="Percentage" id="senior_percentage" ></p>
-				<p>Board:<input type="text" name="seniorBoard"  onkeyup="board(this)" value="" id="seniorBoard"></p>
-				<p>Senior Seconadry(12th%):<input type="text" name="secondary_percentage" placeholder="Percentage" id="secondary_percentage"></p>
-				<p>Board:<input type="text" name="secondaryBoard" onkeyup="board(this)" value="" id="secondaryBoard"></p>
+			<div>
+				<label for="senior">SSC(10th%)</label>
+				<input type="text" name="senior" placeholder="Percentage" id="sscPercent" onchange="percentValidate(name)">
+				<p name="education" id="sscValidate"></p>
+
+				<label for="sscBoard">SSC Board:</label>
+				<input type="text" name="sscBoard"  onchange="nameValidate(name)"  id="ssc_Board">
+				<p name="education" id="sscBoardValidate"></p>
+				
+				<label for= "secondary">HSC(12th%):</label>
+				<input type="text" name="secondary" placeholder="Percentage" id="secondary_percentage" onchange="percentValidate(name)">
+				<p name="education" id="hscValidate"></p>
+
+				<label for=hscBoard>HSC Board:</label>
+				<input type="text" name="hscBoard" id="hsc_Board" onchange="nameValidate(name)">
+				<p name="education" id="hscBoardValidate"></p>
 			
 					<label>Graduation Course:</label>
 					<!--create drop down list-->
-					<select name="graduation_course">
+					<select name="graduation_course" onchange = "courseValid();">
+						<option value="Blank">--------Please Select Options--------</option>
 						<option value="BCA">BCA</option>
 						<option value="BBA">BBA</option>
 						<option value="BBA">B.COM</option>
 						<option value="BBA">B.A</option>
 						<option value="BBA">B.TECH</option>			
 					</select>
-						<p>Percentage:<input type="text" name="university_percentage" id="university_percentage" placeholder="Percentage">
-						<p>University/Board:<input type="text" name="university"  onkeyup="board(this)" value="" id="university"><br>
-						<input type="button" name="Previous1" onclick="pre_step1()" id="pre_btn1" value="Previous step">
-						<input type="button" name="Next" onclick="next_step2()" id="next_btn2" value="Next step">		
+					<br><br>
+
+						<label for="university">University Percentage:</label>
+						<input type="text" name="university" id="university_percentage" placeholder="Percentage" onchange="percentValidate(name)">
+						<p name="education" id="uniValidate"></p>
+
+						<label for="uniBoard">University:</label>
+						<input type="text" name="uniBoard" id="university" onchange="uniValidate(name)">
+						<p name="education" id="uniBoardValidate"></p>
+			</div>
+						<input type="button" name="Previous1" onclick="pre_step1();" id="pre_btn1" value="Previous step">
+						<input type="button" id="next_btn2" onclick="nextStep2();" value="Next Step">	
 		</div>
 
+			<div class="third" id="3">
+		
+			<!-- create photo signature box-->	
+			<h2>Photo & Signature</h2>
+			<div id="body-overlay">
+			<!--img src="img/loading.gif" width="64px" height="64px"--></div>
+					<div id="targetOuter">
+						<div id="targetLayer"></div>
+							<img src="img/photo.png" class="icon-choose-image">
+							<!--img src="img/photo.png" class="icon-choose-image"-->
+							<div class="icon-choose-image">
+								<input type="file" name="userImage" id="userImage" class="inputFile" onchange="showPreview(this);" required>
+							</div>
+					</div>
+
+					<div id="targetOuter1">
+						<div id="targetLayer1"></div>
+							<img src="img/signature.png" class="sign-choose-image">
+								<div class="sign-choose-image">
+									<input type="file" name="signImage" id="signImage" class="inputFile1" onchange="showPreviewSign(this);" required>
+								</div>
+					</div>
+
+
+					<div>
+						<input type="button" name="Previous2" onclick="pre_step2()" value="Previous Step" id="pre_btn2">
+						<a href="formpreview.php"><input type="Submit" name="preview"  value="Submit" id="preview"  ></a>
+					</div>
+		</div>
 
 
 
