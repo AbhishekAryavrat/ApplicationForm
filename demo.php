@@ -20,7 +20,7 @@
 	<body>
 		<!--Create Application Form-->
 		<h1> Application Form</h1>
-		<form action="form.php"  method="POST" id="uploadForm" enctype="multipart/form-data">
+		<form action="server.php"  method="POST" id="uploadForm" enctype="multipart/form-data">
 		<div class="first" id="1">
 			<!--Personal Details Box-->
 				<h2>Personal details</h2>
@@ -42,7 +42,7 @@
 						<input type="radio" name="gender" id= female  value= "female">Female
 						<br>
 					</label>
-					<p id= "genderValidation"></p>
+					<p id="genderValidation"></p>
 
 					<label>Address:</label>
 					<textarea name="Address" rows="5" cols="15"></textarea>
@@ -66,24 +66,24 @@
 			<h2>Educational Details</h2>
 			<div>
 				<label for="senior">SSC(10th%)</label>
-				<input type="text" name="senior" placeholder="Percentage" id="sscPercent" onchange="percentValidate(name)">
+				<input type="text" name="senior" class="eduValue" placeholder="Percentage" id="sscPercent" onchange="percentValidate(id)">
 				<p name="education" id="sscValidate"></p>
 
 				<label for="sscBoard">SSC Board:</label>
-				<input type="text" name="sscBoard"  onchange="nameValidate(name)"  id="ssc_Board">
+				<input type="text" name="sscBoard" class="eduValue"  onchange="nameValidate(id)"  id="ssc_Board">
 				<p name="education" id="sscBoardValidate"></p>
 				
 				<label for= "secondary">HSC(12th%):</label>
-				<input type="text" name="secondary" placeholder="Percentage" id="secondary_percentage" onchange="percentValidate(name)">
+				<input type="text" name="secondary" class="eduValue" placeholder="Percentage" id="hscPercent" onchange="percentValidate(id)">
 				<p name="education" id="hscValidate"></p>
 
 				<label for=hscBoard>HSC Board:</label>
-				<input type="text" name="hscBoard" id="hsc_Board" onchange="nameValidate(name)">
+				<input type="text" name="hscBoard" id="hsc_Board" class="eduValue" onchange="nameValidate(id)">
 				<p name="education" id="hscBoardValidate"></p>
 			
 					<label>Graduation Course:</label>
 					<!--create drop down list-->
-					<select name="graduation_course" onchange = "courseValid();">
+					<select name="graduation_course"  id="course">
 						<option value="Blank">--------Please Select Options--------</option>
 						<option value="BCA">BCA</option>
 						<option value="BBA">BBA</option>
@@ -91,21 +91,21 @@
 						<option value="BBA">B.A</option>
 						<option value="BBA">B.TECH</option>			
 					</select>
-					<br><br>
+					<p id= "courseValidation"></p>
 
 						<label for="university">University Percentage:</label>
-						<input type="text" name="university" id="university_percentage" placeholder="Percentage" onchange="percentValidate(name)">
+						<input type="text" name="university" id="university_percentage" class="eduValue" placeholder="Percentage" onchange="percentValidate(id)">
 						<p name="education" id="uniValidate"></p>
 
 						<label for="uniBoard">University:</label>
-						<input type="text" name="uniBoard" id="university" onchange="uniValidate(name)">
+						<input type="text" name="uniBoard" id="university" class="eduValue" onchange="uniValidate(id)">
 						<p name="education" id="uniBoardValidate"></p>
 			</div>
 						<input type="button" name="Previous1" onclick="pre_step1();" id="pre_btn1" value="Previous step">
-						<input type="button" id="next_btn2" onclick="nextStep2();" value="Next Step">	
+						<input type="button" id="next_btn2" onclick="next_step()" value="Next Step">	
 		</div>
 
-			<div class="third" id="3">
+		<div class="third" id="3">
 		
 			<!-- create photo signature box-->	
 			<h2>Photo & Signature</h2>

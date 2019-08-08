@@ -7,8 +7,8 @@ function nameValidate(info)
 	if(info == 'user_Name'){nameValidation(info,"unameValidate","Name ");}
 	if(info == 'father_Name'){nameValidation(info,"fNameValidate","Father Name ");}
 	if(info == 'mother_Name'){nameValidation(info,"mNameValidate","Mother Name ");}
-	if(info == 'sscBoard'){nameValidation(info,"sscBoardValidate","SSC Board ");}
-	if(info == 'hscBoard'){nameValidation(info, "hscBoardValidate", "HSE Board ");}
+	if(info == 'ssc_Board'){nameValidation(info,"sscBoardValidate","SSC Board ");}
+	if(info == 'hsc_Board'){nameValidation(info, "hscBoardValidate", "HSE Board ");}
 
 }
 
@@ -102,7 +102,7 @@ function nextStep1()
 	}
 	else
 	{
-		alert("Fill all The detailss");
+		alert("Fill all The details");
 	}
 }
 
