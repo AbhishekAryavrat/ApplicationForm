@@ -1,4 +1,4 @@
-function percentValidate(info)
+function percentValidate(info)// for percentage validation
 {
 	// alert(info);
 	if(info == 'sscPercent'){percentValidation(info, "sscValidate", "SSC");}
@@ -6,7 +6,7 @@ function percentValidate(info)
 	if(info == 'university_percentage'){percentValidation(info, "uniValidate", "University");}
 }
 
-function percentValidation(info, errDis, errName)
+function percentValidation(info, errDis, errName)// Regular expression and error handling
 {
 	try
 	{
@@ -22,12 +22,12 @@ function percentValidation(info, errDis, errName)
 	}
 }
 
-function uniValidate(info)
+function uniValidate(info)//University name validation
 	{
 		if(info == 'university'){uniValidation(info,"uniBoardValidate", "University Board");}
 	}
 
-function uniValidation(info,errDis,errName)
+function uniValidation(info,errDis,errName)// for regular expression and error handling
 {
 	try{
 			
@@ -53,7 +53,7 @@ function uniValidation(info,errDis,errName)
 	}
 }
 
-function pre_step1()
+function pre_step1()// for go on the previous step
 {
 	document.getElementById('1').style.display = "block";
 	document.getElementById('2').style.display = "none";
@@ -61,7 +61,7 @@ function pre_step1()
 	count = 1;
 }
 
-function courseValid()
+function courseValid()// for select button validation
 {
 
 	try
@@ -87,7 +87,7 @@ function courseValid()
 	return courseCount;
 }
 
-function eduClass()
+function eduClass()// manage errors for go on the next step
 {
 	var x = document.getElementsByClassName('eduValue').length;
 	var eduCount = 0;
@@ -101,7 +101,7 @@ function eduClass()
 	return eduCount;
 }
 
-function nameCount()
+function nameCount()//manage errors
 {
 	var y= document.getElementsByName('education').length;
 	var nameCount = 0;
@@ -115,7 +115,7 @@ function nameCount()
 	return nameCount;
 }
 
-function next_step()
+function next_step()// function check all validation and go on the next block
 {
 	var courseResult= courseValid();
 	var nameResult = nameCount();
@@ -141,7 +141,7 @@ function next_step()
 	}
 }
 
-function pre_step2()
+function pre_step2()// for previous step
 {
 	document.getElementById('1').style.display = "block";
 	document.getElementById('2').style.display = "block";
@@ -157,12 +157,12 @@ function showPreview(objFileInput)// Create function for image insert and valida
 					
 					if($("#userImage").value == "")// check image is not empty.
 						{
-							alert("Image is Required(124)");
+							alert("Image is Required");
 							return false;
 						}
 					if (jQuery.inArray(exten, ['jpg','jpeg']) == -1)// only jpg , jpeg images are insert.
 						{
-							alert("Please Select a Valid Image(Only jpeg, jpg Images)(125)");
+							alert("Please Select a Valid Image(Only jpeg, jpg Images");
 							return false;
 						}
 					
@@ -215,12 +215,12 @@ function showPreviewSign(objFileInput1)	{
 					
 					if($("#signImage").val()== "")// check image is not empty.
 						{
-							alert("Image is Required(126)");
+							alert("Image is Required");
 							return false;
 						}
 					 if (jQuery.inArray(exten,['jpg','jpeg']) == -1)// only jpg , jpeg images are insert.
 						{
-							alert("Please Select a valid Image(Only jpeg, jpg Images)(127) ");
+							alert("Please Select a valid Image(Only jpeg, jpg Images");
 							return false;
 						}
 				

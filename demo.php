@@ -1,9 +1,3 @@
-<!--  <?php
-
- //session_start();
-//if(isset($_SESSION['$uname']))
- ?> -->
-
 
 <!DOCTYPE html>
  <html>
@@ -102,7 +96,7 @@
 						<p name="education" id="uniBoardValidate"></p>
 			</div>
 						<input type="button" name="Previous1" onclick="pre_step1();" id="pre_btn1" value="Previous step">
-						<input type="button" id="next_btn2" onclick="next_step()" value="Next Step">	
+						<input type="button" id="next_btn2" onclick="next_step();" value="Next Step">	
 		</div>
 
 		<div class="third" id="3">

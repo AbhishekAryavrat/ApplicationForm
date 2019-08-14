@@ -1,7 +1,7 @@
 
 var name = "";
 
-function nameValidate(info)
+function nameValidate(info)//For name validation
 {
 	//alert(document.getElementsByClassName('validValue')[0].value);
 	if(info == 'user_Name'){nameValidation(info,"unameValidate","Name ");}
@@ -12,7 +12,7 @@ function nameValidate(info)
 
 }
 
-function nameValidation(info,errDis,errName)
+function nameValidation(info,errDis,errName)// All regular expression with show error
 {
 	try{
 			
@@ -40,7 +40,7 @@ function nameValidation(info,errDis,errName)
 }
 
 
-function Validate(info)
+function Validate(info)//validation for pincode and email
 {	
 	let regEx1 = /^\d{6}$/;
 	let regEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -48,7 +48,7 @@ function Validate(info)
 	if(info === '_pincode'){emaPinValid(info,"pincodeValidation","Pincode",regEx1);}
 }
 
-function emaPinValid (info,errDis,errName,expr)
+function emaPinValid (info,errDis,errName,expr)// error handling
 {
 	let name = document.getElementById(info).value;
 	try
@@ -62,7 +62,7 @@ function emaPinValid (info,errDis,errName,expr)
 	}
 }
 
-function genderValidate()
+function genderValidate() // Gender validation
 {
 	var radio_check = document.getElementsByName("gender");
 	let errDis = "genderValidation";
@@ -79,7 +79,7 @@ function genderValidate()
 }
 
 
-function nextStep1()
+function nextStep1()// Call all function in a function and manage all errors
 {
 
 	var genResult = genderValidate();
@@ -106,7 +106,7 @@ function nextStep1()
 	}
 }
 
-function classcount()
+function classcount()//manage errors.
 {
 	var x = document.getElementsByClassName('validValue').length;
 	var validCount = 0;
@@ -120,7 +120,7 @@ function classcount()
 	return validCount;
 }
 
-function tagCount()
+function tagCount()//manage errors.
 {
 	var x = document.getElementsByName('valid').length;
 	var validCount = 0;
